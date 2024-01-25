@@ -1,0 +1,6 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!-- User Defaults for Surge XT Synthesizer -->
+<defaults version="1">
+  <default key="modListValueDisplay" value="3" type="2"/>
+  <default key="formulaOverlayLocation" firstvalue="0" secondvalue="58" type="3"/>
+</defaults>

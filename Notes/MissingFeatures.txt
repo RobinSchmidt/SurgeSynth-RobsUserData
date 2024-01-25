@@ -1,0 +1,13 @@
+In this file, I take notes of features of Surge that I miss.
+
+-Routing #CC74 to the cutoff frequency. This is the single most important sound control for most 
+ patches I want to make. CC74 must control the filter's cutoff frequency - that's a standard thing 
+ for me to do but seems impossible due to CC74 being "reserved" and I don't understand what that 
+ means. Yes - I *want* to use CC74 to control the "brightness" - as in filter cutoff - that's 
+ exactly what I want - but it seems to be impossible. 
+
+-Filter keytrack seems to be possible only in Hz - but doesn't seem to be useful to me. It needs to 
+ be in semitones such that the filter cutoff can be played musically by the midi notes. A keytrack
+ of 100% should mean: the cutoff goes up by a factor of 2 between notes that are an octave apart. 
+ It also means the cutoff goes up by a semitone between successive keys. 50% would mean the cutoff 
+ goes up by a factor of sqrt(2) for notes that are an octave apart.
