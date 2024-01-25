@@ -11,7 +11,7 @@ into:
 
 But of course, anyone who has Surge installed will already have their own user data folder in that
 place. So in reality, unless you are me (which you aren't because I am already me), you will 
-probably want to somehow combine your own user data with the data from thisn repo - most likely by 
+probably want to somehow combine your own user data with the data from this repo - most likely by 
 just copying some subfolders of the "Patches" folder into your own 
 
   C:\Users\YourUserName\Documents\Surge XT\Patches
@@ -27,7 +27,13 @@ becomes the local copy of the
 
   https://github.com/RobinSchmidt/SurgeSynth-RobsUserData
   
-repository. This can be done as follows: Open the GitHub Desktop application and go to:
+repository. This can be done as follows: After a fresh install of Surge, there will be the default
+
+  C:\Users\MyUserName\Documents\Surge XT
+
+and yet empty directory that was created by the Surge installer. That directory needs to be deleted
+(or maybe renamed, just in case one want to go back to the default content). Then open the GitHub 
+Desktop application and go to:
 
   File -> Clone Repository
 
