@@ -4,10 +4,17 @@ In this file, I take notes of features of Surge that I miss.
  patches I want to make. CC74 must control the filter's cutoff frequency - that's a standard thing 
  for me to do but seems impossible due to CC74 being "reserved" and I don't understand what that 
  means. Yes - I *want* to use CC74 to control the "brightness" - as in filter cutoff - that's 
- exactly what I want - but it seems to be impossible. 
+ exactly what I want - but it seems to be impossible. It seems like the intention of "reserving"
+ CC74 is specifically to use it for things like filter cutoff. It's like CC74 is *reserved* for 
+ cutoff (and similar things) and therefore it *cannot* be routed to cutoff. What?!
 
 -Filter keytrack seems to be possible only in Hz - but doesn't seem to be useful to me. It needs to 
  be in semitones such that the filter cutoff can be played musically by the midi notes. A keytrack
  of 100% should mean: the cutoff goes up by a factor of 2 between notes that are an octave apart. 
  It also means the cutoff goes up by a semitone between successive keys. 50% would mean the cutoff 
  goes up by a factor of sqrt(2) for notes that are an octave apart.
+ Ah - OK - I see: The keytracking actually behaves correctly - it's just a bit awkward to set up:
+ It's set up in Hz and if you set the keytrack in Hz to exactly the same value as the cutoff (which
+ is also in Hz), then you get the right "keytrack = 100%" behavior. So maybe to exactly dial in a 
+ 100% keytrack, it's best to temporarily set the cutoff to 100 Hz, then set up keytrack to 100 and 
+ then set the cutoff to where you want it to be.
