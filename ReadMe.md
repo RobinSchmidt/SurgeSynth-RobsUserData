@@ -16,7 +16,10 @@ just copying some subfolders of the "Patches" folder into your own
 
   C:\Users\YourUserName\Documents\Surge XT\Patches
 
-folder. I myself need to set up GitHub desktop in such a way that
+folder. 
+
+----------------------------------------------------------------------------------------------------
+I myself need to set up GitHub Desktop in such a way that
 
   C:\Users\MyUserName\Documents\Surge XT
 
@@ -24,12 +27,23 @@ becomes the local copy of the
 
   https://github.com/RobinSchmidt/SurgeSynth-RobsUserData
   
-repository. ...TBC...
+repository. This can be done as follows: Open the GitHub Desktop application and go to:
 
+  File -> Clone Repository
 
+then go to the URL tab and paste:
 
+  https://github.com/RobinSchmidt/SurgeSynth-RobsUserData
 
+into the "URL" field and edit the "Local Path" field to 
 
+  C:\Users\rob\Documents\Surge XT
+
+where I have replaced the "MyUserName" placeholder with my actual user name on that machine which 
+is "rob" and then click the "Clone" button. After the cloning is finished, the Surge XT folder 
+should be in its right place and at the same time serve as the local copy of the repo. When 
+TortoiseGit is installed, the folder should have a green check/hook in the Windows Explorer and it 
+will be possible to commit and push the updates via GitHub Desktop.
 
 ----------------------------------------------------------------------------------------------------
 Notes: 
