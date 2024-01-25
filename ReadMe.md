@@ -53,4 +53,7 @@ of "UserName". That's why I'm not using the common convention for indicating pla
 with square brackets here.
 
 The file README.txt explains how this folder is supposed to be used by Surge. It was not written by 
-me but rather created automatically by the Surge installer.
+me but rather created automatically by the Surge installer. I wrote the ReadMe.md which takes 
+precedence over the .txt file on the GitHub website such that the .md file will be shown when 
+navigating to the repo in a web browser - which is how I want it. The auto-generate .txt file from 
+the Surge installer is just kept for reference but may actually be mostly ignored.
