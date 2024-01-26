@@ -3,3 +3,27 @@ development. Such a file might be better placed into my fork of the actual Surge
 the time being, I don't want to litter it with that because I don't want it to becoem part of any
 pull requests, so I keep it here.
 
+Building Surge:
+
+The readme file here:
+
+  https://github.com/surge-synthesizer/surge
+
+says that to build Surge, one should install git and Visual Studio. I always already do have that
+installed on my develop machine anyway, so nothing to do here. Then, one should do 
+
+  git clone https://github.com/surge-synthesizer/surge.git
+  cd surge
+  git submodule update --init --recursive
+  cmake -Bbuild
+  cmake --build build --config Release --target surge-staged-assets
+
+from the command line. If Powershell is installed, one can do Shift-Rightclick on an empty section 
+in the surge folder content view in the Windows Explorer and the select 
+"Open Powershell window here". What then remains it to enter the:
+
+  git submodule update --init --recursive
+  cmake -Bbuild
+  cmake --build build --config Release --target surge-staged-assets
+
+commands one after another.
