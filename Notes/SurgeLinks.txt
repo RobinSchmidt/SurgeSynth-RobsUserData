@@ -8,3 +8,9 @@ https://github.com/surge-synthesizer/surge
 Various documents explaining the code and workflow for contributions:
 https://github.com/surge-synthesizer/surge/blob/main/doc/
 
+
+Signal flow digram of the synth:
+https://github.com/surge-synthesizer/surge/blob/main/doc/Surge%20Signal%20Flow.png
+-Apparently, the "Send" effects are placed after the voices have been mixed whereas the insert 
+ effects exist per voice. So, to save CPU, we should perhaps put linear effects like reverb and 
+ delay into the send return slots, whenever possible.

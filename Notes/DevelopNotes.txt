@@ -79,8 +79,39 @@ Surge was the self-built one or pre-built binary (assuming that this is installe
 machine - which is the case for me).
 
 
+----------------------------------------------------------------------------------------------------
+General Guidelines:
+
+  https://github.com/surge-synthesizer/surge/blob/main/doc/Developer%20Guide.md
 
 
+
+----------------------------------------------------------------------------------------------------
+Contributing modules:
+
+Here are some textfiles
+
+  https://github.com/surge-synthesizer/surge/tree/main/doc
+
+like "Adding a Filter.md", "Adding an FX" that explains the process. The repo also has a folder
+
+  libs/
+
+which would be the proper place in the case I'd like to add (parts of) my rapt library to the 
+project.
+
+
+
+----------------------------------------------------------------------------------------------------
+Surge seems to store something in:
+
+C:\Users\rob\AppData\Roaming\Surge XT\Surge XT.settings
+
+perhaps it's the last plugin state to be recalled when re-opening it? Figure out!
+
+C:\Users\rob\AppData\Roaming\ToolChain\ToolChain.settings
+
+Ah - it's the same kind of thing that I get for ToolChain:
 
 ----------------------------------------------------------------------------------------------------
 Bugs (maybe move to separate textfile):
@@ -96,3 +127,7 @@ issue about that in github - at least none labeled as bug-report:
 
 https://github.com/surge-synthesizer/surge/issues?q=is%3Aopen+is%3Aissue+label%3A%22Bug+Report%22
 
+Trying Build+Run the Release configuration, the build succeeds but the Synth produces no sound. It 
+says "Audio Output Unavailable" in the top right of the GUI. Going to "Options" in the top left and 
+trying to set up an audio output device produces an error message window saying ""Error when trying 
+to open audio device.". This problem does not occurr with the debug build.
