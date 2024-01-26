@@ -7,6 +7,10 @@ https://github.com/surge-synthesizer/surge
 
 Various documents explaining the code and workflow for contributions:
 https://github.com/surge-synthesizer/surge/blob/main/doc/
+It's probaly best to read them in the order:
+
+  - How to Git
+  - Developer Guide
 
 
 Signal flow digram of the synth:

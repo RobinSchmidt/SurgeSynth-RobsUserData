@@ -76,7 +76,8 @@ build process starts and generates a lot of output messages. The build process t
 couple of minutes (5-10 for a debug build). Then Surge fires up. Apparently, it loads the state that
 it had when it was closed the last time - and it doesn't matter whether this last-closed instance of
 Surge was the self-built one or pre-built binary (assuming that this is installed on the same 
-machine - which is the case for me).
+machine - which is the case for me). In a debug built, we get some red waring indicator in the 
+bottom right of the GUI with some info about the build.
 
 
 ----------------------------------------------------------------------------------------------------
@@ -84,6 +85,43 @@ General Guidelines:
 
   https://github.com/surge-synthesizer/surge/blob/main/doc/Developer%20Guide.md
 
+- Commit messages should have the format:
+  <short summary one-line summary>
+  <long description describing the change in detail>
+  <optional tag>
+  A tag can be either Related <issue number>, Closes <issue number> or Addresses <issue number>.
+- Have a GitHub issue which documents what you are trying to do.
+- Name your branch with a descriptive name and an issue number.
+- Try to have pull requests with one or a small number of commits.
+- Avoid trivial or unrelated diffs.
+
+Style:
+-Use spaces, not tabs. Use 4 spaces indentation.
+-Use namespaces, not classes to group functions.
+
+
+----------------------------------------------------------------------------------------------------
+Surge Architechture:
+
+  https://github.com/surge-synthesizer/surge/blob/main/doc/Surge%20Architecture.md
+
+- Third-party libraries are copied or submoduled into libs. All of the Surge C++ source code is in 
+  the src directory. All of the Surge C++ source code is in the src directory. src/common contains 
+  the complete engine code of Surge, all the DSP and voice handling logic, and so on. 
+  src/surge-xt/gui contains the user interface code.
+
+- Code collaboration between various parts of Surge happens through the SurgeStorage class, which 
+  acts as a named bag of parameters. Each parameter is represented by the Parameter class, which 
+  holds type and value and has an update semantic. SurgeSynthesizer reads the values from the 
+  current SurgeStorage at runtime. This means that things like loading a new patch amount to 
+  unstreaming SurgeStorage into SurgeSynthesizer's current Storage instance. Similarly, changing a 
+  value in the UI means locating the appropriate set of Parameters and calling the appropriate 
+  invalidating value change function on them. 
+  ...what does "unstreaming" mean? Maybe it's a downcast to the appropriate subclass?
+
+- Voice allocation: The core data structure is a list of voices. Each has a reference to state for 
+  the channel in which it is playing. The voice class is in src/common/dsp/SurgeVoice.h and contains
+  a SurgeVoiceState.
 
 
 ----------------------------------------------------------------------------------------------------
@@ -105,13 +143,18 @@ project.
 ----------------------------------------------------------------------------------------------------
 Surge seems to store something in:
 
-C:\Users\rob\AppData\Roaming\Surge XT\Surge XT.settings
+  C:\Users\rob\AppData\Roaming\Surge XT\Surge XT.settings
 
-perhaps it's the last plugin state to be recalled when re-opening it? Figure out!
+I think, it's the last plugin state to be recalled when re-opening it. It's the same kind of thing 
+that I get for ToolChain here:
 
-C:\Users\rob\AppData\Roaming\ToolChain\ToolChain.settings
+  C:\Users\rob\AppData\Roaming\ToolChain\ToolChain.settings
 
-Ah - it's the same kind of thing that I get for ToolChain:
+Sometimes, I get a crash on startup hitting  jassert(hasCalledReset) in 
+MidiMessageCollector::addMessageToQueue. Deleting this file helps to get past this assertion. I 
+don't know what it is, though. It's something in JUCE that doesn't seem to be related to my code. It 
+sometimes happens with Surge and ToolChain just the same which confirms that it's really something
+inside JUCE itself.
 
 ----------------------------------------------------------------------------------------------------
 Bugs (maybe move to separate textfile):
