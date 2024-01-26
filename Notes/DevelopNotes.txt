@@ -1,0 +1,5 @@
+This file contains some notes that I take for the workflows for contributing to the Surge 
+development. Such a file might be better placed into my fork of the actual Surge code repo, but for 
+the time being, I don't want to litter it with that because I don't want it to becoem part of any
+pull requests, so I keep it here.
+
