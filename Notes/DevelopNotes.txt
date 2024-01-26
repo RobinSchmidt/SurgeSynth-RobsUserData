@@ -81,5 +81,18 @@ machine - which is the case for me).
 
 
 
-When closing Surge, the VS output window reveals some memory leaks (6 objects of 60 bytes each).
+
+----------------------------------------------------------------------------------------------------
+Bugs (maybe move to separate textfile):
+
+When closing Surge, the VS output window reveals some memory leaks. The number and kind of them 
+seems to depend on what has been done during operation (like loading patches).
+
+When loading it and doing nothing and then closing it, we get 6 leaked objects with 60 bytes each.
+When hitting one note before closing, we get an additional 6 objects with 16 bytes each. When 
+hitting two notes before closing, we get 12 instead of 6 additional objects with 16 bytes each. It 
+looks like MIDI events take 16 bytes each and are not deleted properly? There seems to be no open
+issue about that in github - at least none labeled as bug-report:
+
+https://github.com/surge-synthesizer/surge/issues?q=is%3Aopen+is%3Aissue+label%3A%22Bug+Report%22
 
