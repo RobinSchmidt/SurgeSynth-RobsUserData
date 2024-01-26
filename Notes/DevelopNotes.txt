@@ -26,11 +26,41 @@ in the surge folder content view in the Windows Explorer and the select
   cmake -Bbuild
   cmake --build build --config Release --target surge-staged-assets
 
-commands one after another. The first one may take a while and apparently downloads more stuff into
-the local copy of the repo (TODO: figure out what that stuff is and document it here!). The second
-one fails with an error saying:
+commands one after another. 
+
+The first one: 
+
+  git submodule update --init --recursive
+
+may take a while and apparently downloads more stuff into the local copy of the repo (TODO: figure 
+out what that stuff is and document it here!). The second one:
+
+  cmake -Bbuild
+
+fails with an error saying:
 
   "The term 'cmake' is not recognized as the name of a cmdlet, function, script file, or operable 
    program."
 
-Hmm...but I do have cmake installed.
+Hmm...but I do have cmake installed. Maybe the installer didn't set the PATH environment variable? 
+But why would it not? OK - let's try something else: Open CMake-GUI, click "Browse Source..." 
+button, navigate to the local copy of the repo, currently I have this here:
+
+  C:\Users\rob\data\GitRepos\surge
+
+and set the "Where to build the binaries" field to something like:
+
+  C:/Users/rob/data/GitRepos/surge/build/vs19
+
+then click the "Configure" button, confirm the popup dialog "Build directory does not exist. Should 
+I create it?", select the appropriate generator (like Visual Studio 16 2019), keep using the default 
+compilers and click "Finish". This takes a while and writes some messages into the bottom view. 
+After it's done, the folder
+
+  C:\Users\rob\data\GitRepos\surge\build\vs19
+
+has been created and fille with some stuff and the middle view turns red and allows to select 
+various options. Just leave that as is and click "Generate". Now, more files will be created - among 
+them is the file:
+
+  C:\Users\rob\data\GitRepos\surge\build\vs19\Surge.sln
