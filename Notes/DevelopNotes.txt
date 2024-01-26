@@ -190,7 +190,10 @@ report. But apparently, that flag must be set consistently on all projects when 
 another, Also, it looks like when _CRTDBG_MAP_ALLOC is #defined, then free, malloc and realloc (and 
 some others) will get #defined as macros and that messes up code that contains these words, so it's 
 usefulness is rather limited - it can only be used in code that doesn't have and (member) functions 
-with these names.
+with these names. See:
+
+https://forum.juce.com/t/conflict-with--crtdbg-map-alloc-visual-studio/6040/10
+https://github.com/juce-framework/JUCE/pull/1337
 
 Done building project "eurorack.vcxproj" -- FAILED.
 Done building project "surge-common.vcxproj" -- FAILED.
