@@ -3,6 +3,7 @@ development. Such a file might be better placed into my fork of the actual Surge
 the time being, I don't want to litter it with that because I don't want it to becoem part of any
 pull requests, so I keep it here.
 
+----------------------------------------------------------------------------------------------------
 Building Surge:
 
 The readme file here:
@@ -64,3 +65,21 @@ various options. Just leave that as is and click "Generate". Now, more files wil
 them is the file:
 
   C:\Users\rob\data\GitRepos\surge\build\vs19\Surge.sln
+
+Double clicking on it will open it in Visual Studio. This solution contains a lot of projects. 
+Right-click on 
+
+  surge-xt  ->  surge_xt_Standalone
+
+and select "Set as StartUp Project" and then hit the green "Play" (= Build + Run) button. Now, the 
+build process starts and generates a lot of output messages. The build process takes a 
+couple of minutes (5-10 for a debug build). Then Surge fires up. Apparently, it loads the state that
+it had when it was closed the last time - and it doesn't matter whether this last-closed instance of
+Surge was the self-built one or pre-built binary (assuming that this is installed on the same 
+machine - which is the case for me).
+
+
+
+
+When closing Surge, the VS output window reveals some memory leaks (6 objects of 60 bytes each).
+
