@@ -1,6 +1,6 @@
 This file contains some notes that I take for the workflows for contributing to the Surge 
 development. Such a file might be better placed into my fork of the actual Surge code repo, but for 
-the time being, I don't want to litter it with that because I don't want it to becoem part of any
+the time being, I don't want to litter it with that because I don't want it to become part of any
 pull requests, so I keep it here.
 
 ----------------------------------------------------------------------------------------------------
@@ -10,8 +10,8 @@ The readme file here:
 
   https://github.com/surge-synthesizer/surge
 
-says that to build Surge, one should install git and Visual Studio. I always already do have that
-installed on my develop machine anyway, so nothing to do here. Then, one should do 
+says that to build Surge on Windows, one should install git and Visual Studio. I always already do 
+have that installed on my develop machine anyway, so nothing to do here. Then, one should do:
 
   git clone https://github.com/surge-synthesizer/surge.git
   cd surge
@@ -20,8 +20,8 @@ installed on my develop machine anyway, so nothing to do here. Then, one should 
   cmake --build build --config Release --target surge-staged-assets
 
 from the command line. If Powershell is installed, one can do Shift-Rightclick on an empty section 
-in the surge folder content view in the Windows Explorer and the select 
-"Open Powershell window here". What then remains it to enter the:
+in the surge folder content view in the Windows Explorer and the select "Open Powershell window 
+here". What then remains it to enter the:
 
   git submodule update --init --recursive
   cmake -Bbuild
@@ -60,7 +60,7 @@ After it's done, the folder
 
   C:\Users\rob\data\GitRepos\surge\build\vs19
 
-has been created and fille with some stuff and the middle view turns red and allows to select 
+has been created and filled with some stuff and the middle view turns red and allows to select 
 various options. Just leave that as is and click "Generate". Now, more files will be created - among 
 them is the file:
 
@@ -86,12 +86,12 @@ machine - which is the case for me).
 Bugs (maybe move to separate textfile):
 
 When closing Surge, the VS output window reveals some memory leaks. The number and kind of them 
-seems to depend on what has been done during operation (like loading patches).
+seems to depend on what has been done during operation.
 
 When loading it and doing nothing and then closing it, we get 6 leaked objects with 60 bytes each.
 When hitting one note before closing, we get an additional 6 objects with 16 bytes each. When 
 hitting two notes before closing, we get 12 instead of 6 additional objects with 16 bytes each. It 
-looks like MIDI events take 16 bytes each and are not deleted properly? There seems to be no open
+looks like MIDI events take 6*16 bytes each and are not deleted properly? There seems to be no open
 issue about that in github - at least none labeled as bug-report:
 
 https://github.com/surge-synthesizer/surge/issues?q=is%3Aopen+is%3Aissue+label%3A%22Bug+Report%22
