@@ -187,8 +187,10 @@ https://learn.microsoft.com/en-us/cpp/c-runtime-library/find-memory-leaks-using-
 
 -> Defining the preprocessor macro _CRTDBG_MAP_ALLOC will lead to a more detailed memory leak 
 report. But apparently, that flag must be set consistently on all projects when one depends on 
-another
-
+another, Also, it looks like when _CRTDBG_MAP_ALLOC is #defined, then free, malloc and realloc (and 
+some others) will get #defined as macros and that messes up code that contains these words, so it's 
+usefulness is rather limited - it can only be used in code that doesn't have and (member) functions 
+with these names.
 
 Done building project "eurorack.vcxproj" -- FAILED.
 Done building project "surge-common.vcxproj" -- FAILED.
