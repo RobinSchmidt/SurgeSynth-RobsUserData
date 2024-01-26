@@ -1,0 +1,10 @@
+
+Main Website with pre-built binaries and user manual:
+https://surge-synthesizer.github.io/
+
+GitHub repo for the source code:
+https://github.com/surge-synthesizer/surge
+
+Various documents explaining the code and workflow for contributions:
+https://github.com/surge-synthesizer/surge/blob/main/doc/
+
