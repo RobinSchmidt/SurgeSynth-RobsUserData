@@ -123,6 +123,9 @@ Surge Architechture:
   the channel in which it is playing. The voice class is in src/common/dsp/SurgeVoice.h and contains
   a SurgeVoiceState.
 
+- The DSP engine contains hand-coded SSE2 implementations of most activities. This requires all data 
+  structures to align on 16 byte boundaries.
+
 
 ----------------------------------------------------------------------------------------------------
 Contributing modules:
@@ -183,4 +186,11 @@ https://stackoverflow.com/questions/4790564/finding-memory-leaks-in-a-c-applicat
 https://learn.microsoft.com/en-us/cpp/c-runtime-library/find-memory-leaks-using-the-crt-library?view=msvc-170#interpret-the-memory-leak-report
 
 -> Defining the preprocessor macro _CRTDBG_MAP_ALLOC will lead to a more detailed memory leak 
-report.
+report. But apparently, that flag must be set consistently on all projects when one depends on 
+another
+
+
+Done building project "eurorack.vcxproj" -- FAILED.
+Done building project "surge-common.vcxproj" -- FAILED.
+Done building project "surge-xt.vcxproj" -- FAILED.
+Done building project "surge-xt_Standalone.vcxproj" -- FAILED.
