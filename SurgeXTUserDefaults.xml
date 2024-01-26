@@ -1,9 +1,10 @@
 <?xml version = "1.0" encoding = "UTF-8" ?>
 <!-- User Defaults for Surge XT Synthesizer -->
 <defaults version="1">
-  <default key="defaultZoom" value="180" type="2"/>
+  <default key="defaultZoom" value="166" type="2"/>
   <default key="defaultSkin" value="modern-dark.surge-skin\" type="1"/>
   <default key="defaultSkinRootType" value="2" type="2"/>
+  <default key="showVirtualKeyboardStandalone" value="1" type="2"/>
   <default key="modListValueDisplay" value="3" type="2"/>
   <default key="formulaOverlayLocation" firstvalue="0" secondvalue="58" type="3"/>
 </defaults>

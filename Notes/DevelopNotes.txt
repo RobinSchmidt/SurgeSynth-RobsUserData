@@ -174,3 +174,13 @@ Trying Build+Run the Release configuration, the build succeeds but the Synth pro
 says "Audio Output Unavailable" in the top right of the GUI. Going to "Options" in the top left and 
 trying to set up an audio output device produces an error message window saying ""Error when trying 
 to open audio device.". This problem does not occurr with the debug build.
+
+
+Finding memleaks:
+
+https://stackoverflow.com/questions/4790564/finding-memory-leaks-in-a-c-application-with-visual-studio
+
+https://learn.microsoft.com/en-us/cpp/c-runtime-library/find-memory-leaks-using-the-crt-library?view=msvc-170#interpret-the-memory-leak-report
+
+-> Defining the preprocessor macro _CRTDBG_MAP_ALLOC will lead to a more detailed memory leak 
+report.
