@@ -8,7 +8,11 @@ In this file, I take notes of features of Surge that I miss.
  CC74 is specifically to use it for things like filter cutoff. It's like CC74 is *reserved* for 
  cutoff (and similar things) and therefore it *cannot* be routed to cutoff. What?!
 
--Filter keytrack seems to be possible only in Hz - but doesn't seem to be useful to me. It needs to 
+
+
+
+-Solved:
+ Filter keytrack seems to be possible only in Hz - but doesn't seem to be useful to me. It needs to 
  be in semitones such that the filter cutoff can be played musically by the midi notes. A keytrack
  of 100% should mean: the cutoff goes up by a factor of 2 between notes that are an octave apart. 
  It also means the cutoff goes up by a semitone between successive keys. 50% would mean the cutoff 
@@ -18,3 +22,40 @@ In this file, I take notes of features of Surge that I miss.
  is also in Hz), then you get the right "keytrack = 100%" behavior. So maybe to exactly dial in a 
  100% keytrack, it's best to temporarily set the cutoff to 100 Hz, then set up keytrack to 100 and 
  then set the cutoff to where you want it to be.
+
+
+
+Improvements of current features:
+
+-The panning of the ocillators currently only allows hard-left, center and hard-right. Would be 
+ better if it would be continuously adjustable.
+
+-It would be nice, if the patches could be alternatively stored in a human-readable (and editable) 
+ format. That would enable users to mix-and-match aspects from different patches - for example like 
+ taking "Scene A" from one patch and "Scene B" from another. In my own plugins, I have a feature 
+ that I call "hierarchical preset management" by which I mean to able to save and load presets not 
+ only for the whole plugin but also for various subsections or subsubsections of it. Surge 
+ apparently already has that for the modulation generators and effects - but it would be nice to 
+ have also for the osc- and filter sections and for the scenes. Manually editing a human-readable 
+ preset file may be used as workaround for power-users while such a sub-preset save/load 
+ functionality is not (yet) available at all levels where it would make sense (and the scene level 
+ is definitely one of such places). 
+
+
+New Modules:
+
+-It would be great to have a simple sample playback oscillator. It should be able to play an 
+ arbitrary sample as one-shot and or with an arbitrary loop and arbitrary start point. The main 
+ thing that I personally want to do with it is to imitate the Roland D-50 "LA Synthesis" which 
+ entails mixing a short attack transient sample with a synthesized body of the sound. We could use 
+ Scene A for the body and Scene B for the transient sample, for example.
+
+
+
+Usability Improvements:
+
+-The patch comments seem to appear only in the "Save" dialog so they are pretty hard to find for the
+ user who just uses presets and doesn't do any sound design themselves. It would be nice to have a 
+ button in the patch browser (the section of the GUI - not the popup menu) that creates a 
+ (floating/transient) window with the patch comment. Maybe a bit similar to the button that shows 
+ the filter frequency-response plots.
