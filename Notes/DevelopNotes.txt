@@ -26,4 +26,11 @@ in the surge folder content view in the Windows Explorer and the select
   cmake -Bbuild
   cmake --build build --config Release --target surge-staged-assets
 
-commands one after another.
+commands one after another. The first one may take a while and apparently downloads more stuff into
+the local copy of the repo (TODO: figure out what that stuff is and document it here!). The second
+one fails with an error saying:
+
+  "The term 'cmake' is not recognized as the name of a cmdlet, function, script file, or operable 
+   program."
+
+Hmm...but I do have cmake installed.
