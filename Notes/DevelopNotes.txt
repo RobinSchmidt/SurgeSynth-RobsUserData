@@ -193,9 +193,25 @@ usefulness is rather limited - it can only be used in code that doesn't have and
 with these names. See:
 
 https://forum.juce.com/t/conflict-with--crtdbg-map-alloc-visual-studio/6040/10
+https://forum.juce.com/t/need-memory-leak-detection-with-filename/10399
+https://forum.juce.com/t/memory-leak-tips/1109/9
+https://forum.juce.com/t/leak-detector/6516/6
+https://forum.juce.com/t/memory-leak-tool/13330/13
+
+https://valgrind.org/docs/manual/quick-start.html
+https://marketplace.visualstudio.com/items?itemName=ArkadyShapkin.VisualLeakDetectorforVisualC
+
+
 https://github.com/juce-framework/JUCE/pull/1337
+
+The projects that fail building with _CRTDBG_MAP_ALLOC #defined are:
 
 Done building project "eurorack.vcxproj" -- FAILED.
 Done building project "surge-common.vcxproj" -- FAILED.
 Done building project "surge-xt.vcxproj" -- FAILED.
 Done building project "surge-xt_Standalone.vcxproj" -- FAILED.
+
+
+Maybe try this, too:
+https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/application-verifier
+
