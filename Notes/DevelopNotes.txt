@@ -80,8 +80,13 @@ machine - which is the case for me). In a debug built, we get some red waring in
 bottom right of the GUI with some info about the build.
 
 
+For building on Apple, there's this file:
+
+https://github.com/surge-synthesizer/surge/blob/main/doc/Building%20for%20Apple%20Silicon.md
+
+
 ----------------------------------------------------------------------------------------------------
-General Guidelines:
+Developer Guide:
 
   https://github.com/surge-synthesizer/surge/blob/main/doc/Developer%20Guide.md
 
@@ -139,7 +144,7 @@ like "Adding a Filter.md", "Adding an FX" that explains the process. The repo al
   libs/
 
 which would be the proper place in the case I'd like to add (parts of) my rapt library to the 
-project.
+project. I don't see any "Adding an Oscillator" document.
 
 
 
@@ -198,8 +203,17 @@ https://forum.juce.com/t/memory-leak-tips/1109/9
 https://forum.juce.com/t/leak-detector/6516/6
 https://forum.juce.com/t/memory-leak-tool/13330/13
 
+
+Debuggin Tools:
+
+Valgrind:
 https://valgrind.org/docs/manual/quick-start.html
+
+Visual Leak Detector:
 https://marketplace.visualstudio.com/items?itemName=ArkadyShapkin.VisualLeakDetectorforVisualC
+
+Address Sanitizer:
+https://learn.microsoft.com/de-de/cpp/sanitizers/asan?view=msvc-170
 
 
 https://github.com/juce-framework/JUCE/pull/1337
