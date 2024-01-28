@@ -222,8 +222,8 @@ Applying a patch on Windows:
 5. In the "Select Folder" dialog that opens, navigate to the local copy of the repo and select it.
 6. TortoiseGitMerge will open. The text areas will be empty and there will be an additional small
    window with title "File patches" that has a "Patch all items" button on the bottom. Click that.
-7. Now the merge TortoiseGitMerge windows will get some content.
-8. Click the "Save" button in the top left. This should actually apply the patch
+7. Now the TortoiseGitMerge merge windows will get some content.
+8. Click the "Save" button in the top left. This should actually apply the patch.
 
 Maybe try this, too:
 https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/application-verifier
