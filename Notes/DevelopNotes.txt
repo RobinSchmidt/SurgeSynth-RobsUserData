@@ -76,14 +76,14 @@ build process starts and generates a lot of output messages. The build process t
 couple of minutes (5-10 for a debug build). Then Surge fires up. Apparently, it loads the state that
 it had when it was closed the last time - and it doesn't matter whether this last-closed instance of
 Surge was the self-built one or pre-built binary (assuming that this is installed on the same 
-machine - which is the case for me). In a debug built, we get some red waring indicator in the 
+machine - which is the case for me). In a debug build, we get some red warning indicator in the 
 bottom right of the GUI with some info about the build.
 
 
 For building on Apple, there's this file:
 
 https://github.com/surge-synthesizer/surge/blob/main/doc/Building%20for%20Apple%20Silicon.md
-
+...I didn't try that yet
 
 ----------------------------------------------------------------------------------------------------
 Developer Guide:
@@ -111,9 +111,9 @@ Surge Architechture:
   https://github.com/surge-synthesizer/surge/blob/main/doc/Surge%20Architecture.md
 
 - Third-party libraries are copied or submoduled into libs. All of the Surge C++ source code is in 
-  the src directory. All of the Surge C++ source code is in the src directory. src/common contains 
-  the complete engine code of Surge, all the DSP and voice handling logic, and so on. 
-  src/surge-xt/gui contains the user interface code.
+  the src directory. The directory src/common contains the complete engine code of Surge, all the 
+  DSP and voice handling logic, and so on. The directory src/surge-xt/gui contains the user 
+  interface code.
 
 - Code collaboration between various parts of Surge happens through the SurgeStorage class, which 
   acts as a named bag of parameters. Each parameter is represented by the Parameter class, which 
@@ -147,6 +147,23 @@ which would be the proper place in the case I'd like to add (parts of) my rapt l
 project. I don't see any "Adding an Oscillator" document.
 
 
+Adding a filter:
+
+- This is documented here:
+  https://github.com/surge-synthesizer/surge/blob/main/doc/Adding%20a%20Filter.md
+
+
+Adding an effect:
+
+- This is documented here:
+  https://github.com/surge-synthesizer/surge/blob/main/doc/Adding%20an%20FX.md
+- Its seems to be be a bit simpler that adding a filter
+
+
+Adding an oscillator:
+
+- There doesn't seem to be a document yet that describes how to do that.
+
 
 ----------------------------------------------------------------------------------------------------
 Surge seems to store something in:
@@ -163,6 +180,23 @@ MidiMessageCollector::addMessageToQueue. Deleting this file helps to get past th
 don't know what it is, though. It's something in JUCE that doesn't seem to be related to my code. It 
 sometimes happens with Surge and ToolChain just the same which confirms that it's really something
 inside JUCE itself.
+
+----------------------------------------------------------------------------------------------------
+To keep the fork in sync with the original Surge repository, I should occasionally merge the 
+changes that are published on the main branch into my fork. In GitHub desktop, this can be done as
+follows - I guess:
+
+1. Switch to the main branch
+2. Open the context menu that say "Current branch: main"
+3. At the bottom, there's a button "Choose a branch to merge into main". Click that.
+4. Select upstream/main and click on the "Create a merger commit" button.
+5. If all goes well, it will say something like "Sucessfully merged upstream/main" into main. Now 
+   the main bramach of the local clone of the repo should be ip to date.
+6. Click on "Push origin". This should bring the the forked repo on github in sync.
+7. Switch back to the work branch
+8. Go again to the button that now says "Choose a branch to merge into work"
+7. Select main and click "Create a merge commit".
+8. Click on "Push origin" again
 
 ----------------------------------------------------------------------------------------------------
 Bugs (maybe move to separate textfile):
