@@ -1,0 +1,9 @@
+Electronic Bassdrums:
+-Use a sum of 2 or 3 exp-shaped decay envelopes on th pitch
+-Set them all to the same shape (exponential - not necessarily same curvature, though) and time and
+ control their actual lengths with the "Rate" parameter and their influence with the "Amplitude"
+ parameter of the the LFO. Set the mod-amount to maximum  (14 semitones). They should all be 
+ unipolar (it's confusing otherwise)
+-Maybe sort the envelopes by speed - slowest first.
+-Use one MSEG for the amplitude. ADSR is not good enough - we need more control. So, set the ADSR to 
+ neutral
