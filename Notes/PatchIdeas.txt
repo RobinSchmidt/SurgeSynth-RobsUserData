@@ -7,3 +7,11 @@ Electronic Bassdrums:
 -Maybe sort the envelopes by speed - slowest first.
 -Use one MSEG for the amplitude. ADSR is not good enough - we need more control. So, set the ADSR to 
  neutral
+-Maybe the formula modulator could be used to get an extended modulation range. It can output values
+ greater than 1 easily, I hope. See here how to use it:
+ https://surge-synthesizer.github.io/manual-xt/#formula
+ ...hmm - well - it says, it ranges from -1 to +1 but maybe that's just the nominal range? Will it 
+ be clipped? ...Nah! The values are clipped indeed! Not good! So, the formula modulator does not 
+ help to extedn the modulation range. So maybe let's use MSEG 1 for the amplitude, MSEG 2 for filter
+ cutoff and MSEG 3,4,5,6 for the pitch. Maybe when we add up 4 of them, we get enough cumulative 
+ range? It's then 56 semitones in total
